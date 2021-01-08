@@ -59,9 +59,9 @@ export const getState = (stateId) => {
     axios
       .get(`${process.env.REACT_APP_API}/api/getStateById/${stateId}`,CommonHeader())
       .then((Response) => {
-        const country = Response.data.stateList;
-        // console.log(country);
-        dispatch(fetchStateSuccess(country));
+        const state = Response.data.stateList;
+        console.log("Response",Response.data);
+        dispatch(fetchStateSuccess(state));
       })
       .catch((error) => {
         const errors = error.message;

@@ -7,22 +7,18 @@ import FormikControll from '../../Formik_Parts/FormikControll';
 import * as Yup from 'yup';
 
 
-import Blog from '../../IMG/blog.jpg';
 import CommentIcon from '../../IMG/comment.png';
-import LikeIcon from '../../IMG/like.png';
-import CommentSendIcon from '../../IMG/commentsendicon2.png';
 import Liked from '../../IMG/Like one.png'
 import Likedefault from '../../IMG/likenun.png'
 import DislikeDefault from '../../IMG/likenot.png'
 import Disliked from '../../IMG/likedark.png'
 
-import DisIcon from '../../IMG/dislike.png';
 import { Link, useHistory } from 'react-router-dom';
 import '../CSS/comment.css';
 import { IsEmpty } from '../../Services/Service';
 import {LikeRequest}from '../../Redux/Private/CraeteBlog/Like/LikeAction'
 import { DisLikeRequest } from "../../Redux/Private/CraeteBlog/DisLike/DislikeAction";
-import {COMMENTREQUEST} from '../../Redux/Private/CraeteBlog/comment/CommentAction'
+import {COMMENTREQUEST} from '../../Redux/Private/CraeteBlog/Comment/CommentAction'
 import { getAllPublicBlog } from "../../Redux/Blog/BlogAction";
 
 

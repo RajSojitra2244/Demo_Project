@@ -3,13 +3,14 @@ import {Countryreducer, SignUPreducer, Statereducer,Loginreducer,PublicBlogReduc
 import{ContactUsReducer}from './ContactUs/ContactUsReducer'
 import {ForgotPasswordReducer}from './ForgotPassword/ForgotPasswordReducer'
 import {CreateBlogReducer} from './Private/CraeteBlog/CreateBlogReducer'
-import {PrivateBlogReducer}from '../Redux/Private/CraeteBlog/GetBlogById/ShowBlogReducer'
-import {DeleteBlogReducer}from '../Redux/Private/CraeteBlog/DeleteBlog/DeleteBlogReducer'
-import{PublicBlogreducer}from '../Redux/Blog/BlogReducer'
+import {PrivateBlogReducer}from './Private/CraeteBlog/GetBlogById/ShowBlogReducer'
+import {DeleteBlogReducer}from './Private/CraeteBlog/DeleteBlog/DeleteBlogReducer'
+import{PublicBlogreducer}from './Blog/BlogReducer'
 import {ChangePasswordReducer} from './Private/CraeteBlog/ResetPassword/ResetPasswordReducer'
-import {CommentReducer} from './Private/CraeteBlog/comment/CommentReducer'
+import {CommentReducer} from './Private/CraeteBlog/Comment/CommentReducer'
 import {LikeReducer} from './Private/CraeteBlog/Like/LikeReducer'
-import{DisLikeReducer}from './Private/CraeteBlog//DisLike/dislikereducer'
+import{DisLikeReducer}from './Private/CraeteBlog/DisLike/Dislikereducer'
+import{UpdateProfileReducer}from './Private/CraeteBlog/Update/UpdateProfileReducer'
 const rootreducer =combineReducers({
    country: Countryreducer,
    state:Statereducer,
@@ -24,7 +25,8 @@ const rootreducer =combineReducers({
    changepassword:ChangePasswordReducer,
    comment:CommentReducer,
    like:LikeReducer,
-   dislike:DisLikeReducer
+   dislike:DisLikeReducer,
+   updateprofile:UpdateProfileReducer
 })
 
 

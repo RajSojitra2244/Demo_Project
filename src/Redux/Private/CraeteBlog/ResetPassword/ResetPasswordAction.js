@@ -34,6 +34,8 @@ export const ChangePasswordRequest= (data,onSubmitProps,props) => {
                       onSubmitProps.resetForm();
                       props.history.push('/dash')
                   },2000)
+          }else{
+            toast.error(Response.data.message)
           }
       })
       .catch((error) => {

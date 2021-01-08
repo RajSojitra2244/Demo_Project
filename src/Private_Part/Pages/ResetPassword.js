@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import { Field, ErrorMessage, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { ChangePasswordRequest } from '../../Redux/Private/CraeteBlog/ResetPassword/ResetPasswordAction';
+import Changepsd from '../../IMG/changepsd.png'
 function Resetpassword(props) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -37,12 +38,16 @@ function Resetpassword(props) {
             return (
               <Form>
                 <Card>
+                <div className="row">
+                    <div className="col-4">
                   <Card.Body>
-                    <Card.Title className="Blogtitle">
+                    <img src={Changepsd} alt=""   />
+                  </Card.Body>
+                </div>
+                    <div className="col-8">
+                  <Card.Title className="Blogtitle " style={{marginLeft:"20%",marginTop:"20px"}}>
                       <h3>Change Password</h3>
                     </Card.Title>
-                    <Card.Text></Card.Text>
-                  </Card.Body>
                   <Card.Body>
                     <FormikControll
                       control="input"
@@ -65,6 +70,8 @@ function Resetpassword(props) {
                       Submit
                     </button>
                   </Card.Body>
+                  </div>
+                  </div>
                 </Card>
               </Form>
             );

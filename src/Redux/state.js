@@ -77,3 +77,8 @@ export const dislike = {
     loading: false,
     error: null
 }
+export const update = {
+    data: [],
+    loading: false,
+    error: null
+}

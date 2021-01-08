@@ -30,8 +30,6 @@ function Dashboard(props) {
   let getprivateblog = useSelector((state) => state.privateblog.allprivateblog);
   console.log("getprivateblog",getprivateblog);
 
-// const fdata = getprivateblog.filter((data)=>{return(data._id == Ldata.data._id)})
-// console.log("fdata",fdata);
 
   useEffect(() => {
     dispatch(GetBlogById());
@@ -40,16 +38,11 @@ function Dashboard(props) {
     dispatch(DeleteBlogById(userId, props))
   }
   
-  const ChangeImg = (data) => {
-    setlike(!like)
-    console.log("sdad",data._id);
-    // dispatch(LikeRequest(getprivateblog.id));
-  }
   const GotoComment = (data) => {
     history.push('/comment', data)
   }
   const cardclick=(data)=>{
-    // history.push('/comment', data)
+    history.push('/comment', data)
   }
   return (
     <div>
@@ -58,19 +51,19 @@ function Dashboard(props) {
           {IsEmpty(getprivateblog) &&
             <Loader type="ThreeDots" className="loder" color="#00BFFF" height={80} width={80} />}
 
-          <div className="site-card-wrapper">
+          <div className="site-card-wrapper  ">
             <Row gutter={16}>
               {!IsEmpty(getprivateblog) &&
                 getprivateblog.map((data) => {
                   { console.log("sasas", data) }
                   return (
                     <div className="Blog">
-                      <Col span={8} onClick={()=>cardclick(data)}>
+                      <Col span={8}>
                         <Card
                           hoverable
                           style={{ width: 360 }}
                           className="Blogcard"
-                          cover={<img alt="example" height="250px" src={process.env.REACT_APP_API +'/'+ data.blogImagePath} />}
+                          cover={<img alt="example" height="250px"  onClick={()=>cardclick(data)}   src={process.env.REACT_APP_API +'/'+ data.blogImagePath} />}
                         >
                           <div className="row">
                             <div className="col-8">

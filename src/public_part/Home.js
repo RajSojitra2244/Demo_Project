@@ -27,8 +27,8 @@ function Home() {
     const dispatch=useDispatch()
     const { Meta } = Card;
 
-  let GetPublicBlog = useSelector((state) => state.PublicBlogData.Blog);
-console.log("GetPublicBlog",GetPublicBlog);
+  let alldata = useSelector((state) => state.PublicBlogData.Blog);
+console.log("GetPublicBlog",alldata);
 
     useEffect(() => { 
         dispatch(getAllPublicBlog())
@@ -54,53 +54,51 @@ const ChangeImg=()=>{
 </Carousel>
 
       
-{ IsEmpty(GetPublicBlog) &&
+{ IsEmpty(alldata) &&
  <Loader type="ThreeDots" className="loder" color="#00BFFF" height={80} width={80}/>}
 
     <div className="site-card-wrapper HOMECARD">
+    <div className="site-card-wrapper allcardprivate">
             <Row gutter={16}>
-              {GetPublicBlog &&
-                GetPublicBlog.map((data) => {
+              {!IsEmpty(alldata) &&
+                alldata.map((data) => {
+                  { console.log("sasas", data) }
                   return (
                     <div className="Blog">
                       <Col span={8}>
                         <Card
                           hoverable
-                          style={{ width: 240 }}
+                          style={{ width: 360 }}
                           className="Blogcard"
-                          
-                          cover={<img alt="example" src={Blog} />}
+                          onClick={()=>toast.error("Please Login")}
+                          cover={<img alt="example" height="250px" src={process.env.REACT_APP_API +'/'+ data.blogImagePath} />}
                         >
                           <div className="row">
                             <div className="col-8">
                               <Meta
-                              className="allbloghome"
                                 title={data.blogTitle}
                                 description={data.blogContent}
                               />
                             </div>
                             <div className="col-4">
-                             
                             </div>
                           </div>
                           <div className="row allicon">
-                        <div className="col-4">
-                                  <img src={like?DisLikeIcon:LikeIcon} onClick={ChangeImg}  className="commenticon"/>
+                            <div className="col-6">
+                              {/* <img src={CommentIcon} onClick={() => GotoComment(data)} className="commenticon" /> */}
                             </div>
-                            <div className="col-4">
-                                  <img src={CommentIcon} onClick={()=>toast.error("Please Login")} className="commenticon"/>
-                            </div>
-                            <div className="col-4">
-                            <img src={Delete} onClick={()=>toast.error("Please Login")} className="deleteicon" />
+                            <div className="col-6">
+                              {/* <img src={Delete} onClick={() => { DeleteBlog(data._id) }} className="deleteicon" /> */}
 
                             </div>
-                        </div>
+                          </div>
                         </Card>
                       </Col>
                     </div>
                   );
                 })}
             </Row>
+          </div>
       </div>
  </div>
     )

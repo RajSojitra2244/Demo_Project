@@ -4,11 +4,10 @@ import TextError from './TextError'
 
 function CheckBoxGroup(props) {
     const{lable,name,options,...rest}=props
-    console.log("check",props);
     return (
     
                <div className="form-group">
-                    <label htmlFor={name}>{lable}</label>
+                    <label htmlFor={name} >{lable}</label>
                     <Field name={name} {...rest}>
                         {({field})=>{
                             return options.map(option =>{
@@ -22,7 +21,8 @@ function CheckBoxGroup(props) {
                                     value={option.value}
                                     checked={field.value.includes(option.value)}
                                     />
-                                    <lable htmlFor={option.value}>{option.key}</lable>
+                                    <lable htmlFor={option.value} style={{marginRight:"10px"}}    >{option.key}</lable>
+                                   
                                     </React.Fragment>
                                 )
                             })

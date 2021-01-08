@@ -9,7 +9,7 @@ import CountctUs from '../public_part/ContactUs'
 import ForgotPassword from '../public_part/ForgotPassword'
 import SetPassword from '../public_part/SetPassword'
 import {isAuthenticated} from '../PrivateRouter/auth'
-import Table from '../Private_Part/Pages/table'
+import Tabledata from '../Private_Part/Pages/table'
 import profile from '../Private_Part/Pages/profile'
 import CreateBlog from '../Private_Part/Pages/CreateBlog'
 import Resetpassword from '../Private_Part/Pages/ResetPassword'
@@ -36,11 +36,10 @@ function RouterFile() {
             <Route exact path="/registration" component={RegistrationForm}/>
 
             <ProtectedRoute exact path="/dash" component={Dashboard}/>
-            <ProtectedRoute exact path="/table" component={Table}/>
             <ProtectedRoute exact path="/profile" component={profile}/>
             <ProtectedRoute exact path="/createblog" component={CreateBlog}/>
             <ProtectedRoute exact path="/changepassword" component={Resetpassword}/>
-            <ProtectedRoute exact path="/table" component={Table}/>
+            <ProtectedRoute exact path="/table" component={Tabledata}/>
             <ProtectedRoute exact path="/comment" component={Comment}/>
             <ProtectedRoute exact path="/allblog" component={Allblog}/>
             <ProtectedRoute exact path="/allblogaction" component={AllBlogAction}/>

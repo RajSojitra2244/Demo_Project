@@ -22,7 +22,7 @@ import '../CSS/comment.css';
 import { IsEmpty } from '../../Services/Service';
 import {LikeRequest}from '../../Redux/Private/CraeteBlog/Like/LikeAction'
 import { DisLikeRequest } from "../../Redux/Private/CraeteBlog/DisLike/DislikeAction";
-import {COMMENTREQUEST} from '../../Redux/Private/CraeteBlog/comment/CommentAction'
+import {COMMENTREQUEST} from '../../Redux/Private/CraeteBlog/Comment/CommentAction'
 import { getAllPublicBlog } from "../../Redux/Blog/BlogAction";
 
 function AllBlogAction(props) {
@@ -117,7 +117,7 @@ function AllBlogAction(props) {
             return (
               <Form>
 
-      <div className="CreateBlog commentcard">
+      <div className="CreateBlog commentcard allcardprivate">
         <Card className="cardcomment" style={{width:360}}>
           <Card.Body>
             <Card.Title className="Blogtitle">
